@@ -1,0 +1,85 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" ng-app="stopwatch" id="ng-app">
+<head>
+  <script src="js/modernizr-2.6.2.min.js"></script>
+  <!--[if lte IE 8]>
+  <script src="/path/to/json2.js"></script>
+  <![endif]-->
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Coda' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/foundation.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+  <div class="row">
+    <div class="small-12 large-4 small-centered columns">
+      <h1>Stopwatch</h1>
+    </div>
+  </div>
+  <div class="container" ng-controller='appController'>
+    <div class="row">
+      <div class="small-12 small-centered columns">
+        <div class="timer">
+          <div class="row">
+            <div class="small-3 large-2 small-offset-2 large-offset-3 columns">
+              {{ timer.hours }} <span class="colon">:</span>
+            </div>
+            <div class="small-3 large-2 columns">
+              {{ timer.minutes }} <span class="colon">:</span> 
+            </div>
+            <div class="small-3 large-2 columns">
+              {{ timer.seconds }}
+            </div>
+            <div class="large-3 columns"></div>
+          </div>
+          <div class="row">
+           <div class="small-2 small-offset-8 columns">
+             <span class="ms">{{ timer.ms }}</span>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="all-big-buttons">
+    <button class="alert" id="start" ng-click="startTimer()">Start</button>
+    <button class="alert" id="stop" ng-click="stopTimer()">Stop</button>
+    <button class="disabled" id="lap" ng-click="lapTimer()">Lap</button>
+    <button class="disabled" id="split" ng-click="splitTimer()">Split</button>
+    <button id="reset" ng-click="resetTimer()">Reset</button>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <ul>
+      <div ng-repeat="lap in splits | orderBy:'splitindex':true">
+        <h3>
+          <span ng-show = "{{laps.length>0}}">Current Lap :  </span>Split [{{splits.length - $index}}] -> {{lap.hours}} : {{lap.minutes}} : {{lap.seconds}} : {{lap.ms}}
+          </h3>
+        </div>
+      <div class="panel callout radius" ng-repeat="array in laps | orderObjectBy:'lapindex':true"> 
+          <h3>Lap [{{laps.length - $index}}] 
+          <span ng-repeat="lap in array" >
+            <span ng-hide = "{{array.length>1}}">
+             -> {{lap.hours}} : {{lap.minutes}} : {{lap.seconds}} : {{lap.ms}} 
+             </span>
+          </span>
+          </h3>
+          <ul ng-show = "{{array.length>1}}">
+            <li ng-repeat="i in array | orderBy:'splitindex':true">
+              <h4>
+                Split [{{array.length - $index}}] -> {{i.hours}} : {{i.minutes}} : {{i.seconds}} : {{i.ms}}
+              </h4>
+            </li>
+          </ul>
+        </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="js/angular.min.js"></script>
+  <script src="js/jquery-2.0.3.min.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

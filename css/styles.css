@@ -1,0 +1,119 @@
+body {
+  background: #074e68;
+  color: white;
+  font-size: 20px;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: white;
+  text-align: center;
+}
+
+.container .timer {
+  font-family: 'Coda', cursive;
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+}
+
+.container .timer div {
+  text-align: center;
+}
+
+.container .timer .colon {
+  font-size: 80px;
+}
+
+@media screen and (max-width: 599px) {
+  .container .timer .colon {
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .container .timer .colon {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 299px) {
+  .container .timer .colon {
+    font-size: 10%;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container .timer {
+    font-size: 70px;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .container .timer {
+    font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 399px) {
+  .container .timer {
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 299px) {
+  .container .timer {
+    font-size: 35px;
+  }
+}
+
+.container .timer span.ms {
+  font-size: 50%;
+  text-align: right;
+  position: absolute;
+  margin-top: -10%;
+  margin-left: 10%;
+}
+
+.all-big-buttons {
+  text-align: center;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 399px) {
+  .all-big-buttons {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+
+.all-big-buttons button {
+  margin: 20px;
+  font-size: 25px;
+  width: 200px;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 399px) {
+  .all-big-buttons button {
+    border-radius: 0px;
+    margin: 0px;
+    width: 100%;
+  }
+}
+
+.all-big-buttons #stop {
+  display: none;
+}
+
+@media screen and (max-width: 399px) {
+  .top {
+    position: fixed;
+  }
+}
+
+ul h3,
+ul h4 {
+  color: white;
+}

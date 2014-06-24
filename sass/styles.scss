@@ -1,0 +1,104 @@
+@import "Bourbon";
+
+$phone-small:  300px;
+$phone:        400px;
+$phone-wide:   500px;
+$tablet:       600px;
+$large-screen: 992px;
+$fgcolor : #fff;
+$bgcolor : #074e68;
+@mixin up($device-width) {
+	@media screen and (min-width: $device-width) {
+		@content 
+	}
+}
+
+@mixin bp($device-width) {
+	@media screen and (max-width: $device-width - 1) {
+		@content 
+	}
+}
+
+body {
+	background : $bgcolor;
+	color : $fgcolor;
+	font-size : 20px;
+}
+
+h1 {
+	font-family: 'Pacifico', cursive;
+	color:$fgcolor;
+	text-align:center;
+}
+.container {
+	.timer {
+		font-family: 'Coda', cursive;
+		font-size: 100px;
+		font-weight: 100;
+		text-align: center;
+		div {
+			text-align: center;
+		}
+		.colon {
+			font-size: 80px;
+			@include bp($tablet){font-size: 80%;}
+			@include bp($phone-wide){font-size:50%;}
+			@include bp($phone-small){font-size:10%;}
+		}
+		@include bp ($tablet) {
+			font-size: 70px;
+		}
+		@include bp ($phone-wide) {
+			font-size: 60px;
+		}
+		@include bp ($phone) {
+			font-size: 45px;
+		}
+		@include bp ($phone-small) {
+			font-size: 35px;
+		}
+		span.ms {
+			font-size: 50%;
+			text-align: right;
+			position: absolute;
+			margin-top: -10%;
+			margin-left: 10%;
+		}
+
+	}
+}
+
+.all-big-buttons {
+	text-align : center;
+	margin-top : 50px;
+	@include bp($phone) {
+			margin-bottom : 20px;
+			width: 100%;
+		}
+	button {
+		margin : 20px;
+		font-size: 25px;
+		width : 200px;
+		display: inline-block;
+		border-radius: 3px;
+		@include bp($phone) {
+			border-radius:0px;
+			margin : 0px;
+			width: 100%;
+		}
+	}
+	#stop {
+		display: none;
+	}
+}
+
+.top {
+	@include bp ($phone) {
+		position : fixed;
+	}
+}
+ul {
+	h3,h4 {
+		color : $fgcolor;
+	}
+}

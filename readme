@@ -1,0 +1,13 @@
+Below are the functionalities implemented
+
+* Basic Start and Stop Functionality.
+* Separate Split Timer and Lap Timer Function.
+* Provision to have multiple Splits in every lap.
+* Toggling the Buttons according to the scenario.
+* Responsive design
+
+Frameworks used
+* Foundation css3 framework
+* SASS 
+* Angular.js 
+* jQuery to switch button styles
